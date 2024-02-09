@@ -282,6 +282,12 @@ def get_argparser():
         help=Repo2Docker.engine.help,
     )
 
+    argparser.add_argument(
+        "--container-system",
+        type=str,
+        help=Repo2Docker.container_system.help
+    )
+
     return argparser
 
 
@@ -463,6 +469,9 @@ def make_r2d(argv=None):
 
     if args.target_repo_dir:
         r2d.target_repo_dir = args.target_repo_dir
+
+    if args.container_system:
+        r2d.container_system = args.container_system
 
     return r2d
 

@@ -162,6 +162,14 @@ class Repo2Docker(Application):
         """,
     )
 
+    container_system = Unicode(
+        "docker",
+        help="""
+        Sets the container build system (i.e., Docker, Singularity, or Apptainer).
+        """,
+        config=True
+    )
+
     build_memory_limit = ByteSpecification(
         0,
         help="""
